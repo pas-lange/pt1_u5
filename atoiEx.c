@@ -18,14 +18,23 @@ int isInRange(char c, int *v){
 
 int atoiEx(char zahl[]){
 	int i, n = 0;
+	int vorzeichen = 0;
 	int buf_value = 0;
+	int offset = 0;
 
-	// Prüfen, ob der Parameter eine Hex-Zahl ist
-	if((zahl[0] == '0') && (zahl[1] == 'x')){
-		for(i=2; isInRange(zahl[i], &buf_value); i++) n = 16*n + buf_value;
+	if(zahl[0] == '-'){
+		vorzeichen = -1;
+		offset ++;
 	} else {
-		for(i=0; zahl[i] >= '0' && zahl[i] <= '9'; i++) n=10*n + (zahl[i]-'0');
+		vorzeichen = 1;
 	}
 
-	return n;
+	// Prüfen, ob der Parameter eine Hex-Zahl ist
+	if((zahl[offset+0] == '0') && (zahl[offset+1] == 'x')){
+		for(i=offset+2; isInRange(zahl[i], &buf_value); i++) n = 16*n + buf_value;
+	} else {
+		for(i=offset+0; zahl[i] >= '0' && zahl[i] <= '9'; i++) n=10*n + (zahl[i]-'0');
+	}
+
+	return n*vorzeichen;
 }

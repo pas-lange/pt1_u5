@@ -11,7 +11,7 @@ int main(int argc, char *argv[]){
 
 	if(argc <= 1){
 		printf("usage: %s <zahl>+ \n", prog);
-		printf("Hexadezimal: 0x... ; Bsp.: 0xAF \n");
+		printf("Hexadezimal: 0x... ; Bsp.: 0xAFFE, -0xBEAF \n");
 	} else {
 		for(i=1; i<argc; i++){
 			printf("%s = %d \n", argv[i], atoiEx(argv[i]));
