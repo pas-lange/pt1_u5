@@ -3,7 +3,10 @@
 
 #include <stdio.h>
 #include <string.h>
+#ifdef _atoiEx
 #include "atoiEx.h"
+#endif
+
 
 int main(int argc, char *argv[]){
 	char *prog = argv[0];
@@ -14,7 +17,7 @@ int main(int argc, char *argv[]){
 		printf("Hexadezimal: 0x... ; Bsp.: 0xAFFE, -0xBEAF \n");
 	} else {
 		for(i=1; i<argc; i++){
-			printf("%s = %d \n", argv[i], atoiEx(argv[i]));
+			printf("%s = %d \n", argv[i], atoi(argv[i]));
 		}
 	}
 

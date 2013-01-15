@@ -3,4 +3,4 @@
 /* Hex-Angabe wie folgt: 0xAF.. ; Dez: 124..    		*/
 
 int isInRange(char c, int *v);
-int atoiEx(char zahl[]);
+int atoi(char zahl[]);

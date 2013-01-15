@@ -16,7 +16,7 @@ int isInRange(char c, int *v){
 	return 1;
 }
 
-int atoiEx(char zahl[]){
+int atoi(char zahl[]){
 	int i, n = 0;
 	int vorzeichen = 0;
 	int buf_value = 0;
