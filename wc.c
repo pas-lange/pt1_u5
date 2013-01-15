@@ -7,7 +7,7 @@
 
 #define ANSI_COLOR_CYAN    "\x1b[36m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
-
+//#define durchschnitt( A, N, C ) A+=((N-A)/(A))
 
 float durchschnitt(float *alt, int neu, int anzahl){
 	return (*alt) += (neu-(*alt)) / (++anzahl);
@@ -39,6 +39,7 @@ int main(int argc, char *argv[]){
 			if(letzte_wort_len > 0){
 			// Wort beendet -> neue dursch. Wortlänge -> Wortzahl erhöhen
 				durchschnitt(&avg_wort_len, letzte_wort_len, worte++);
+				//durchschnitt(avg_wort_len, letzte_wort_len, ++worte);
 				letzte_wort_len = 0;
 			}
 		}
